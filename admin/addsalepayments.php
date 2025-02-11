@@ -92,11 +92,11 @@ if (!isset($_SESSION['admin_id'])) {
                                  </div>
                                  <div class="col-lg-6">
                                     <label>Debit</label>
-                                                        <div class="form-group">
+                                    <div class="form-group">
                                                            
-                                <input type="text" name="debit"  id="debit" class="form-control"  onkeyup="getbalance();" placeholder="Enter Amount">
+                                <input type="text" name="p_debit"  id="p_debit" class="form-control"  placeholder="Enter Amount">
                                                            
-                                                        </div>
+                                </div>
                                                           <div> <span id="errorOfEmail"></span></div>
                                  </div>
                                   <div class="col-lg-6">

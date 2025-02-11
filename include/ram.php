@@ -3407,6 +3407,7 @@ function add_product() {
             $p_totalamount = $_POST['p_totalamount'];
             $p_deposit = $_POST['p_deposit'] ?? 0;
             $p_balance = $_POST['p_balance'] ?? 0; 
+            $p_debit_amount = $_POST['p_debit'] ?? 0; 
             $advance_balance = $_POST['advance_balance'] ?? 0;
             $payment_mode = isset($_POST['payment_mode']) && is_array($_POST['payment_mode']) ? $_POST['payment_mode'] : [];
             $payment_amount = $_POST['payment_amount'] ?? 0;
@@ -3417,7 +3418,7 @@ function add_product() {
 
             //print_r($_POST); exit;
          
-            $transaction_query = "INSERT INTO transactions (transaction_date, total_amount, balance_amount, customer_id,transaction_type,remark) VALUES (NOW(), ?, ?, ?,?,?)";
+            $transaction_query = "INSERT INTO transactions (transaction_date, total_amount, total_amount, balance_amount, customer_id,transaction_type,remark) VALUES (NOW(), ?, ?, ?,?,?)";
             $stmt = $link->prepare($transaction_query);
             $stmt->bind_param("disss", $p_deposit, $p_balance, $purchasetempids, $transaction_type , $remark);
             $stmt->execute();
